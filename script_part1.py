@@ -1,4 +1,6 @@
-# precipitatio data (json file) is imported and opened
+# Part 1
+
+#precipitation data (json file) is imported and opened
 
 import json
 
@@ -123,3 +125,51 @@ Results["Seattle"] = Seattle
 with open('results.json', 'w', encoding='utf-8') as file:
     json.dump(Results, file, indent=4)
 
+# Part 2
+    
+# yearly precipitation is calculated by summing all the totals of the individual months
+
+total_yearly_precipitation = 0
+for total_month in total_monthly_precipitation:
+    total_yearly_precipitation += total_month
+print (total_yearly_precipitation)
+
+# relative monthly precipitation is calculated using the total per month and the total of the year
+
+relative_january_precipitation = total_january_precipiation/total_yearly_precipitation
+relative_february_precipitation = total_february_precipiation/total_yearly_precipitation
+relative_march_precipitation = total_march_precipiation/total_yearly_precipitation
+relative_april_precipitation = total_april_precipiation/total_yearly_precipitation
+relative_may_precipitation = total_may_precipiation/total_yearly_precipitation
+relative_june_precipitation = total_june_precipiation/total_yearly_precipitation
+relative_july_precipitation = total_july_precipiation/total_yearly_precipitation
+relative_august_precipitation = total_august_precipiation/total_yearly_precipitation
+relative_september_precipitation = total_september_precipiation/total_yearly_precipitation
+relative_october_precipitation = total_october_precipiation/total_yearly_precipitation
+relative_november_precipitation = total_november_precipiation/total_yearly_precipitation
+relative_december_precipitation = total_december_precipiation/total_yearly_precipitation
+
+# a list is created for the relative monthly values and the relative values are added per month
+
+relative_monthly_precipitation = []
+relative_monthly_precipitation.append(relative_january_precipitation)
+relative_monthly_precipitation.append(relative_february_precipitation)
+relative_monthly_precipitation.append(relative_march_precipitation)
+relative_monthly_precipitation.append(relative_april_precipitation)
+relative_monthly_precipitation.append(relative_may_precipitation)
+relative_monthly_precipitation.append(relative_june_precipitation)
+relative_monthly_precipitation.append(relative_july_precipitation)
+relative_monthly_precipitation.append(relative_august_precipitation)
+relative_monthly_precipitation.append(relative_september_precipitation)
+relative_monthly_precipitation.append(relative_october_precipitation)
+relative_monthly_precipitation.append(relative_november_precipitation)
+relative_monthly_precipitation.append(relative_december_precipitation)
+
+print(relative_monthly_precipitation)
+
+# dictionary key is added for the relative monthly precipitation and added to the results json file
+
+Seattle["relative_monthly_precipitation"] = relative_monthly_precipitation
+
+with open('results.json', 'w', encoding='utf-8') as file:
+    json.dump(Results, file, indent=4)
