@@ -369,3 +369,5 @@ Seattle["relative_yearly_precipitation"] = relative_yearly_precipitation
 with open('results.json', 'w', encoding='utf-8') as file:
     json.dump(Results, file, indent=4)
 
+# I thought the assignment was just to make a json file on Seattle, and not add all the information for all the locations to the json file. I could have done that with my code, but no time.
+
